@@ -1,0 +1,126 @@
+body{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+
+.hero {
+      background-image: url('./images/istockphoto-2206615958-2048x2048\ copy.jpg'); 
+      background-size: cover;  
+      background-position: center;
+      height: 100vh;           
+      display: flex;           
+      align-items: center;
+      justify-content: center;
+      color: white;             
+      text-align: center;
+      position: relative;
+    }
+
+    
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5); 
+    }
+
+    .hero-content {
+      position: relative; 
+      z-index: 1;
+      font-size: 2rem;
+      max-width: 600px;
+    }
+
+    .container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(142, 135, 135, 0.916);
+      
+    }
+
+    .profile-img{
+      border-radius: 50%;
+      height: 200px;
+      width: 170px;
+      margin-top: 50px;
+    }
+    h2,h3,h4,h5{
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    p{
+      font-size: 1.5rem;
+    }
+    .text-img{
+        display: flex;         
+        align-items: center;   
+        gap: 25px;             
+    }
+
+    .skills p, 
+    .work-experience p,
+    .contact p {
+      font-size: 1.3rem;
+      margin-top: 50px;
+    }
+
+    
+  
+    .gif-img{
+      height: 200px;
+      width: 200px;
+    }
+    span{
+      color: white;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      text-align: center;
+    }
+
+    .dots {
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+    font-size: 1.2rem; 
+    letter-spacing: 1px; 
+}
+
+.contact{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact p .line2 {
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+}
+
+.contact-btn{
+  display: inline-block;
+  background-color: #27282a;
+  color: rgb(217, 215, 215);
+  padding: 12px 25px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3f4042;
+  padding: 100px;
+}
+
+.social-links img {
+  width: 40px; 
+  height: 40px;
+  margin: 20px;
+}
