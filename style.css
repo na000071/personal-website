@@ -166,6 +166,28 @@ body {
   max-width: 400px;
 }
 
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.project-links .btn-link {
+  padding: 8px 14px;
+  background-color: #27282a;
+  color: #FFD700;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.project-links .btn-link:hover {
+  background-color: #FFD700;
+  color: #27282a;
+}
+
 
 .project-card a {
   color: #FFD700;
