@@ -150,6 +150,13 @@ body {
   height: 200px;
 }
 
+.projects .project-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
 /* Project Cards */
 .project-card {
   background: rgba(0,0,0,0.4);
@@ -234,6 +241,9 @@ body {
     width: 150px;
     height: 150px;
   }
+  .projects .project-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Mobile screens */
@@ -261,5 +271,8 @@ body {
   .gif-img {
     width: 120px;
     height: 120px;
+  }
+  .projects .project-list {
+    grid-template-columns: 1fr;
   }
 }
