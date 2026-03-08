@@ -8,11 +8,12 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="navbar">
    <div class="container nav-container">
-     <h2 class="logo">M</h2>
-     <nav>
+     <a class="logo" href="#hero" aria-label="Go to the top of the page">M</a>
+     <nav aria-label="Primary navigation">
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -24,6 +25,8 @@
    </div>
   </header>
 
+  <main id="main-content" tabindex="-1">
+
   <!-- Hero Section -->
   <section id="hero" class="hero-about">
    <div class="container hero-content">
@@ -32,16 +35,16 @@
       <p>I’m a <span>Web Developer</span>. I enjoy building websites and exploring new technologies, and I’m excited to gain practical experience through a co-op opportunity.</p>
       <a href="#projects" class="btn">View My Work</a>
      </div>
-     <img class="profile-img" src="./images/WhatsApp Image 2025-09-29 at 23.40.26_99a9e7ad.jpg" alt="Profile">
+     <img class="profile-img" src="./images/WhatsApp Image 2025-09-29 at 23.40.26_99a9e7ad.jpg" alt="Portrait of Meenakshi Kashyap" loading="lazy">
     </div>
  </section>
 
   <!-- Skills Section -->
   <section class="skills" id="skills">
     <div>
-      <h3>My Skills</h3>
+      <h2>My Skills</h2>
       <div class="text-img">
-        <img src="./images/glasses-17902_256.gif" alt="Skills GIF" class="gif-img">
+        <img src="./images/glasses-17902_256.gif" alt="" class="gif-img" aria-hidden="true" loading="lazy">
         <p>As a full-stack web developer, I have a strong foundation in front-end technologies such as HTML, CSS, and JavaScript,
          and I build responsive and user-friendly interfaces. On the back end, I am familiar with databases, python and server-side development through php and C#,
           allowing me to create complete web applications. I enjoy combining both front-end and back-end skills to bring ideas to life and
@@ -53,9 +56,9 @@
   <!-- Work Experience Section -->
   <section class="work-experience" id="work">
     <div>
-      <h3>Work Experience</h3>
+      <h2>Work Experience</h2>
       <div class="text-img">
-        <img src="./images/charlesdeluvio-AT5vuPoi8vc-unsplash.jpg" alt="Work Experience" class="gif-img">
+        <img src="./images/charlesdeluvio-AT5vuPoi8vc-unsplash.jpg" alt="Desk workspace with keyboard and monitor" class="gif-img" loading="lazy">
         <p>I have three years of experience in customer support service, working with different organizations in India. I gained hands-on experience handling customer queries, resolving technical issues, and providing excellent service. I worked with companies such as Tech Mahindra, TaskUs, and Alorica, developing strong communication skills, problem-solving abilities, and adaptability in fast-paced environments.</p>
       </div>
     </div>
@@ -64,30 +67,30 @@
   <!-- Projects Section -->
   <section class="projects" id="projects">
     <div>
-      <h3>My Projects</h3>
+      <h2>My Projects</h2>
       <div class="project-list">
         <div class="project-card">
-         <h4>Portfolio Website</h4>
+         <h3>Portfolio Website</h3>
          <p>Built with HTML, CSS, and JavaScript, fully responsive and mobile-friendly.</p>
           <div class="project-links">
-           <a href="https://github.com/na000071/personal-website" target="_blank">View on GitHub</a>
-           <a href="https://na000071.github.io/personal-website/" target="_blank">Live Demo</a>
+           <a href="https://github.com/na000071/personal-website" target="_blank" rel="noopener noreferrer" aria-label="View Portfolio Website source code on GitHub (opens in a new tab)">View on GitHub</a>
+           <a href="https://na000071.github.io/personal-website/" target="_blank" rel="noopener noreferrer" aria-label="View Portfolio Website live demo (opens in a new tab)">Live Demo</a>
           </div>
         </div>
         <div class="project-card">
-         <h4>Pokedex</h4>
+         <h3>Pokedex</h3>
          <p>A web application for browsing and managing Pokémon data, built with React and Node.js.</p>
           <div class="project-links">
-           <a href="https://github.com/na000071/pokedex" target="_blank">View on GitHub</a>
-           <a href=" https://na000071.github.io/pokedex/" target="_blank">Live Demo</a>
+           <a href="https://github.com/na000071/pokedex" target="_blank" rel="noopener noreferrer" aria-label="View Pokedex source code on GitHub (opens in a new tab)">View on GitHub</a>
+           <a href="https://na000071.github.io/pokedex/" target="_blank" rel="noopener noreferrer" aria-label="View Pokedex live demo (opens in a new tab)">Live Demo</a>
           </div>
         </div>
          <div class="project-card">
-         <h4>Drumkit</h4>
+         <h3>Drumkit</h3>
          <p>A web application for creating drum sounds, built with HTML, CSS, and JavaScript.</p>
           <div class="project-links">
-           <a href="https://github.com/na000071/Drum-Kit" target="_blank">View on GitHub</a>
-           <a href="https://na000071.github.io/Drum-Kit/" target="_blank">Live Demo</a>
+           <a href="https://github.com/na000071/Drum-Kit" target="_blank" rel="noopener noreferrer" aria-label="View Drumkit source code on GitHub (opens in a new tab)">View on GitHub</a>
+           <a href="https://na000071.github.io/Drum-Kit/" target="_blank" rel="noopener noreferrer" aria-label="View Drumkit live demo (opens in a new tab)">Live Demo</a>
           </div>
         </div>
       </div>
@@ -98,7 +101,7 @@
   <!-- Contact Section -->
   <section class="contact" id="contact">
     <div>
-      <h3>Get In Touch</h3>
+      <h2>Get In Touch</h2>
       <p><span class="line1">Got a project idea or question about web development?</span><br>
          <span class="line2">Let’s turn ideas into code together!</span>
       </p>
@@ -106,17 +109,19 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/meenakshi-kashyap-ba9818203/" target="_blank" rel="noopener noreferrer">
-        <img src="./images/linkedin.png" alt="LinkedIn">
+      <a href="https://www.linkedin.com/in/meenakshi-kashyap-ba9818203/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)">
+        <img src="./images/linkedin.png" alt="" loading="lazy">
       </a>
-      <a href="https://www.facebook.com/people/Meenakshi-Meenakshi/" target="_blank" rel="noopener noreferrer">
-        <img src="./images/facebook.png" alt="Facebook">
+      <a href="https://www.facebook.com/people/Meenakshi-Meenakshi/" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile (opens in a new tab)">
+        <img src="./images/facebook.png" alt="" loading="lazy">
       </a>
-      <a href="https://www.instagram.com/_minku___" target="_blank" rel="noopener noreferrer">
-        <img src="./images/instagram.png" alt="Instagram">
+      <a href="https://www.instagram.com/_minku___" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile (opens in a new tab)">
+        <img src="./images/instagram.png" alt="" loading="lazy">
       </a>
     </div>
     <p>&copy; 2026 Meenakshi Kashyap</p>

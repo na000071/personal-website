@@ -1,10 +1,17 @@
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 // Smooth scrolling for nav links and buttons
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e){
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    const targetId = this.getAttribute('href');
+    const target = document.querySelector(targetId);
     if(target){
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      e.preventDefault();
+      target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+
+      if (targetId === '#main-content') {
+        target.focus({ preventScroll: true });
+      }
     }
   });
 });
@@ -12,43 +19,56 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Fade-in sections on scroll
 const sections = document.querySelectorAll('.skills, .work-experience, .projects, .contact');
 
-const options = {
-  threshold: 0.1
-};
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+  const options = {
+    threshold: 0.1
+  };
 
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('fade-in');
-      observer.unobserve(entry.target);
-    }
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, options);
+
+  sections.forEach(section => {
+    section.classList.add('opacity-zero');
+    observer.observe(section);
   });
-}, options);
-
-sections.forEach(section => {
-  section.classList.add('opacity-zero'); // hide initially
-  observer.observe(section);
-});
+}
 
 // Highlight active nav link while scrolling
 const navLinks = document.querySelectorAll('.nav-links a');
+const pageSections = Array.from(navLinks)
+  .map(link => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
 
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 70;
-    if(pageYOffset >= sectionTop){
+function updateActiveNavLink() {
+  let current = pageSections[0]?.id || '';
+
+  pageSections.forEach(section => {
+    const sectionTop = section.offsetTop - 90;
+    if (window.scrollY >= sectionTop) {
       current = section.getAttribute('id');
     }
   });
 
   navLinks.forEach(link => {
-    link.classList.remove('active');
-    if(link.getAttribute('href') === '#' + current){
-      link.classList.add('active');
+    const isActive = link.getAttribute('href') === '#' + current;
+    link.classList.toggle('active', isActive);
+
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
     }
   });
-});
+}
+
+window.addEventListener('scroll', updateActiveNavLink);
+window.addEventListener('load', updateActiveNavLink);
 
 // Dynamic year in footer
 const footerYear = document.querySelector('.footer p');
